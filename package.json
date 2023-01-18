@@ -1,0 +1,30 @@
+{
+  "name": "hygraph-reference-commerce",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^2.9.10",
+    "@stripe/stripe-js": "^1.46.0",
+    "autoprefixer": "^10.4.13",
+    "classcat": "^5.0.4",
+    "graphql": "^16.6.0",
+    "graphql-request": "^5.1.0",
+    "next": "^13.1.2",
+    "next-seo": "^5.15.0",
+    "postcss": "^8.4.21",
+    "prettier": "^2.8.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.42.1",
+    "react-use-cart": "^1.13.0",
+    "stripe": "^11.6.0",
+    "swr": "^2.0.1",
+    "tailwindcss": "^3.2.4",
+    "yup": "^0.32.11"
+  }
+}
