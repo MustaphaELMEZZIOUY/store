@@ -5,8 +5,11 @@ import getProductBySlug from '@/lib/get-product-slug'
 import getPageData from '@/lib/get-page-data'
 import ProductPageUI from '@/components/product-page-ui'
 import SEO from '@/components/seo'
+import ProductPagePorps from '@/interfaces/ProductPagePorps'
 
-function ProductPage({ product }) {
+function ProductPage({ product }: {product: ProductPagePorps}) {
+  console.log({product});
+  
   return (
     <React.Fragment>
       <SEO title={product.name} {...product} />

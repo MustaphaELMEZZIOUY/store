@@ -8,8 +8,11 @@ import { ChevronDownSmallIcon } from '@/icons'
 import { formatCurrencyValue } from '@/utils/format-currency-value'
 import ProductReviews from '@/components/product-reviews'
 import { useSettingsContext } from '@/context/settings'
+import ProductPagePorps from '@/interfaces/ProductPagePorps'
 
-function ProductPageUI({ product }) {
+function ProductPageUI({ product }: {product: ProductPagePorps}) {
+  console.log({product});
+  
   const { addItem } = useCart()
   const router = useRouter()
   const { activeCurrency } = useSettingsContext()
@@ -48,7 +51,7 @@ function ProductPageUI({ product }) {
 
     addItem(
       {
-        id: activeVariantId,
+        id: activeVariantId.toString(),
         productId: product.id,
         image: product.images[0],
         price: product.price,

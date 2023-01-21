@@ -1,10 +1,12 @@
 import Link from 'next/link'
 import Image from 'next/image'
-
 import { formatCurrencyValue } from '@/utils/format-currency-value'
 import { useSettingsContext } from '@/context/settings'
+import { string } from 'yup'
+import ProductGridProps from '@/interfaces/ProductGridProps'
 
-function ProductCard({ id, images, name, price, slug }) {
+function ProductCard({ id, images, name, price, slug }: ProductGridProps) {
+  console.log({ id, images, name, price, slug });
   const { activeCurrency } = useSettingsContext()
 
   const [primaryImage] = images

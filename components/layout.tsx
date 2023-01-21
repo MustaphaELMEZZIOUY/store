@@ -6,6 +6,7 @@ import Footer from '@/components/footer'
 import Header from '@/components/header'
 
 function Layout({ children, footer, navigation }) {
+  
   return (
     <React.Fragment>
       <DefaultSeo {...defaultSeo} />
