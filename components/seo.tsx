@@ -3,7 +3,7 @@ import { NextSeo } from 'next-seo'
 
 import { defaultUrl } from 'next-seo.config'
 
-function SEO({ images, ...props }) {
+function SEO({ images, ...props }: any) {
   const router = useRouter()
 
   const SEO = {

@@ -32,6 +32,7 @@ function Cart() {
   const {
     setSubmissionError,
     setSubmissionLoading,
+    setSubmissionSuccess,
     submissionError,
     submissionLoading,
     submissionState
@@ -66,7 +67,7 @@ function Cart() {
       if (!res.ok) {
         const error = new Error(
           'An error occurred while performing this request'
-        )
+        ) as any;
 
         error.info = await res.json()
         error.status = res.status
@@ -103,6 +104,7 @@ function Cart() {
                   src={item.image.url}
                   width={item.image.width}
                   height={item.image.height}
+                  alt="toBeDelete"
                 />
               </div>
               <div>
