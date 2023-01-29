@@ -30,6 +30,10 @@ function ProductPageUI({ product }: {product: ProductPagePorps}) {
   const activeVariant = product.variants.find(
     (variant) => variant.id === activeVariantId
   )
+
+  console.log({activeVariant});
+  
+
   const updateQuantity = (event) =>
     setVariantQuantity(Number(event.target.value))
   const updateVariant = (event) => setActiveVariantId(event.target.value)
@@ -52,6 +56,7 @@ function ProductPageUI({ product }: {product: ProductPagePorps}) {
     addItem(
       {
         id: activeVariantId.toString(),
+        variantName: activeVariant.name || "",
         productId: product.id,
         image: product.images[0],
         price: product.price,

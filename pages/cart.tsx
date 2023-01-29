@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useCart } from 'react-use-cart'
 import { loadStripe } from '@stripe/stripe-js'
-
 import Button from '@/components/ui/button'
 import {
   ChevronDownSmallIcon,
@@ -89,6 +88,9 @@ function Cart() {
 
   if (isEmpty) return <p>Your cart is empty</p>
 
+  console.log({ items1: items });
+
+
   return (
     <React.Fragment>
       <SEO title="Cart" />
@@ -114,6 +116,11 @@ function Cart() {
                 >
                   {item[router.locale].name}
                 </Link>
+                <p className="text-gray-600 text-sm flex items-center focus:outline-none mb-3">
+                  {
+                    item.variantName
+                  }
+                </p>
                 <button
                   className="text-gray-400 hover:text-indigo-600 text-xs flex items-center focus:outline-none"
                   onClick={() => removeItem(item.id)}

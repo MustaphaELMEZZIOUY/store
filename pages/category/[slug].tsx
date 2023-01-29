@@ -5,8 +5,14 @@ import getCategoryBySlug from '@/lib/get-category-slug'
 import getPageData from '@/lib/get-page-data'
 import ProductGrid from '@/components/product-grid'
 import SEO from '@/components/seo'
+import categoryProps from '@/interfaces/categoryProps'
+import { GetStaticPaths, GetStaticProps } from 'next'
 
-function CategoryPage({ category }) {
+function CategoryPage({ category }: {category: categoryProps}) {
+
+
+  console.log({category});
+
   return (
     <React.Fragment>
       <SEO title={category.name} {...category} />
@@ -15,7 +21,7 @@ function CategoryPage({ category }) {
   )
 }
 
-export async function getStaticPaths({ locales }) {
+export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   let paths = []
 
   for (const locale of locales) {
@@ -36,7 +42,7 @@ export async function getStaticPaths({ locales }) {
   }
 }
 
-export async function getStaticProps({ locale, params }) {
+export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
   const pageData = await getPageData({ locale })
   const { category } = await getCategoryBySlug({
     locale,
